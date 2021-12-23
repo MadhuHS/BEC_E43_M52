@@ -5,14 +5,7 @@ import java.util.Iterator;
 import java.util.PriorityQueue;
 import java.util.PriorityQueue;
 
-class DescOrder implements Comparator<Integer> {
-	@Override
-	public int compare(Integer i1, Integer i2) {
-		int res = i2 - i1;
-		return res;
-	}
 
-}
 
 class Mainclass2 {
 	public static void main(String[] args) {
