@@ -13,7 +13,7 @@ public abstract class RepoUtils
    
    void openConnection()throws SQLException
    {
-	 if(con!=null)
+	 if(con==null)
 	 {
 	   con = DriverManager.getConnection(dburl,dbUser,dbPwd);  
 	 }

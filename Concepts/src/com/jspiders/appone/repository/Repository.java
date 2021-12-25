@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public interface Repository {
 
 	public void selectOne(String value)throws SQLException;
-	public void selectAll();
+	public void selectAll()throws SQLException;
 	public void insert(ArrayList<String> values);
 	public void update(String value);
 	public void delete(String value);
