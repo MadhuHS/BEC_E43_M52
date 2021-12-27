@@ -1,24 +1,20 @@
 package com.jspiders.appone;
 
-import java.sql.SQLException;
-
-import com.jspiders.appone.repository.UserRepository;
+import com.jspiders.appone.services.UserService;
 
 public class Mainclass {
 
+	static UserService us1 = new UserService();
+	
 	public static void main(String[] args) 
 	{
-		try
-		{
-			UserRepository usr = new UserRepository();
-			//usr.selectOne("virat@rcb.com");
-			usr.selectAll();
-		} 
-		catch (SQLException sqlex) 
-		{
-			sqlex.printStackTrace();
-		}
-
+		System.out.println("Program starts...");
+		
+		us1.login("virat@rcb.com","9876543210");
+		
+		//us1.showProfile("virat@rcb.com");
+		
+		System.out.println("Program ends...");
 	}
 
 }

@@ -3,9 +3,12 @@ package com.jspiders.appone.repository;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.jspiders.appone.entities.User;
+
 public interface Repository {
 
-	public void selectOne(String value)throws SQLException;
+	public User selectOne(String value)throws SQLException;
+	
 	public void selectAll()throws SQLException;
 	public void insert(ArrayList<String> values);
 	public void update(String value);

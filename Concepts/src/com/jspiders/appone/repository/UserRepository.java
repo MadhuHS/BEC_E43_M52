@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.jspiders.appone.entities.User;
+
 public class UserRepository 
 extends RepoUtils 
 implements Repository {
@@ -23,25 +25,33 @@ implements Repository {
 	}
 
 	@Override
-	public void selectOne(String value) throws SQLException {
+	public User selectOne(String value) throws SQLException {
+		
 		PreparedStatement pm = con.prepareStatement(selectUserQuery);
+		User u1 = null;
+		ResultSet rs = null;
 
 		pm.setString(1, value);
 
 		// System.out.println(pm);
 
-		ResultSet rs = pm.executeQuery();// returns ResultSet
+		rs = pm.executeQuery();// returns ResultSet
 
-		rs.next();// move the cursor to next record
+		if(rs.next() == true)// move the cursor to next record
+		{
+		 int    uid = rs.getInt("UID");
+		 String name = rs.getString("Name");
+		 String email = rs.getString("Email");
+		 String mob = rs.getString("mob");
+		
+		 u1 = new User(uid,name,email,mob);
+		}
 
-		int uid = rs.getInt("UID");
-		String name = rs.getString("Name");
-		String email = rs.getString("Email");
-		String mob = rs.getString("mob");
-
-		System.out.println(uid + " " + name + " " + email + " " + mob);
+		//System.out.println(uid + " " + name + " " + email + " " + mob);
 
 		closeConnection();
+		
+		return u1;
 	}
 
 	@Override
