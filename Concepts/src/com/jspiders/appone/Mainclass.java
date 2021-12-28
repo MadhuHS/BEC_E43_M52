@@ -10,9 +10,14 @@ public class Mainclass {
 	{
 		System.out.println("Program starts...");
 		
-		us1.login("virat@rcb.com","9876543210");
+		//us1.signup("USER1","user1@gmail.com","1111111111");
 		
-		//us1.showProfile("virat@rcb.com");
+		//us1.login("user1@gmail.com","1111111111");
+		
+		//us1.showAllUserProfiles();
+		
+		us1.updateProfile("Maxwell","maxwell@rcb.com","9876543214","user1@gmail.com");
+		
 		
 		System.out.println("Program ends...");
 	}
