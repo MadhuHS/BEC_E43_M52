@@ -1,14 +1,14 @@
 package com.jspiders.appone;
 
-import com.jspiders.appone.services.UserService;
+import com.jspiders.appone.frontend.UserInterface;
 
-public class Mainclass {
-
-	static UserService us1 = new UserService();
-	
+public class Mainclass 
+{
+    private static UserInterface ui = new UserInterface();	
+    
 	public static void main(String[] args) 
 	{
-		System.out.println("Program starts...");
+		ui.loginPage();
 		
 		//us1.signup("USER1","user1@gmail.com","1111111111");
 		
@@ -16,11 +16,10 @@ public class Mainclass {
 		
 		//us1.showAllUserProfiles();
 		
-		us1.updateProfile("Maxwell","maxwell@rcb.com","9876543215","user1@gmail.com");
+		//us1.updateProfile("Maxwell","maxwell@rcb.com","9876543215","user1@gmail.com");
 		
 		//us1.deleteAccount("user11@gmail.com");
 		
-		System.out.println("Program ends...");
 	}
 
 }
