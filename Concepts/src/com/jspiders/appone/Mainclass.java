@@ -12,12 +12,13 @@ public class Mainclass {
 		
 		//us1.signup("USER1","user1@gmail.com","1111111111");
 		
-		//us1.login("user1@gmail.com","1111111111");
+		//us1.login("user11@gmail.com","1111111111");
 		
 		//us1.showAllUserProfiles();
 		
-		us1.updateProfile("Maxwell","maxwell@rcb.com","9876543214","user1@gmail.com");
+		us1.updateProfile("Maxwell","maxwell@rcb.com","9876543215","user1@gmail.com");
 		
+		//us1.deleteAccount("user11@gmail.com");
 		
 		System.out.println("Program ends...");
 	}

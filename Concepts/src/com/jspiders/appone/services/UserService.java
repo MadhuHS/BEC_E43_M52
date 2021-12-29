@@ -55,7 +55,7 @@ public class UserService {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (NullPointerException e) {
-			System.out.println("catch block");
+			
 			System.out.println(entEmail + " does not exist please create an account");
 		}
 	}
@@ -102,6 +102,19 @@ public class UserService {
 		catch (SQLException e) 
 		{
 			System.out.println("User with "+currEmail+" does not exist");
+		}
+	}
+	
+	public void deleteAccount(String email)
+	{
+		try 
+		{
+			usrRepo.delete(email);
+			System.out.println("User account deleted");
+		} 
+		catch (SQLException e) 
+		{
+			System.out.println("User with "+email+" does not exist");
 		}
 	}
 	

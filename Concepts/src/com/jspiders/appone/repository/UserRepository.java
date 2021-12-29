@@ -18,6 +18,8 @@ implements Repository {
 	
 	String userUpdateQuery = 
 	"update Appusers.users set name = ?,email = ?,mob = ? where email = ? " ;
+	
+	String userDeleteQuery = "delete from Appusers.users where email = ? " ;
 
 	// NON-STATIC BLOCK : OPen the connection to user repo
 	{
@@ -105,7 +107,6 @@ implements Repository {
 	@Override
 	public int update(List<String> values,String condition) throws SQLException {
 		
-		System.out.println("user update()");
 		
 		PreparedStatement ps  = con.prepareStatement(userUpdateQuery);
 	      
@@ -122,9 +123,18 @@ implements Repository {
 	}
 
 	@Override
-	public void delete(String value) {
-		// TODO Auto-generated method stub
+	public int delete(String value) throws SQLException
+	{
+		  PreparedStatement ps  = con.prepareStatement(userDeleteQuery);
+	      
+	      ps.setString(1,value);//name
+	      	      
+	      int count = ps.executeUpdate();//DML
+	      
+	      return count;
 
 	}
 
 }
+
+

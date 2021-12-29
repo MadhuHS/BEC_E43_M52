@@ -15,5 +15,5 @@ public interface Repository {
 	
 	public int update(List<String> values,String condition)throws SQLException;
 	
-	public void delete(String value);
+	public int delete(String value)throws SQLException;
 }
