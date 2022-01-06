@@ -25,13 +25,13 @@ public class Mainclass
 		
 		s1.save(e1);//insert
 		
-		tx.commit();//save
+		tx.commit();//save changes
 		
 		s1.close();//close session
 		
 		sf.close();//close sessionFactory
 
-		
+
 		System.out.println("Program ends...");
 	}
 }
