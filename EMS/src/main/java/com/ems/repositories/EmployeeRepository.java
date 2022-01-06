@@ -15,5 +15,7 @@ public class EmployeeRepository extends RepoUtils {
 		tx.commit();
 		
 		closeSession();
+		
+		System.out.println("Employee added to DB");
 	}
 }
