@@ -2,15 +2,12 @@ package com.ems.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity(name = "Dept")
 public class Department
 {	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int deptNo;
 
 	@Column(length = 20, nullable = false)

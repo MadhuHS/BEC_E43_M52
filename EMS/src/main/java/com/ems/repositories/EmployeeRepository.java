@@ -2,20 +2,52 @@ package com.ems.repositories;
 
 import com.ems.entities.Employee;
 
-public class EmployeeRepository extends RepoUtils {
+public class EmployeeRepository
+extends RepoUtils 
+implements Repository {
 
-	public void insert(Employee emp)
+	public void insert(Object obj) 
 	{
+		createSession();
+
+		tx = session.beginTransaction();
+
+		session.save(obj);// insert
+
+		tx.commit();
+
+		closeSession();
+
+		System.out.println("Employee added to DB");
+
+	}
+
+	public void update(Object obj) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void delete(Object obj) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public Object selectOne(Object id) {
+
 		createSession();
 		
 		tx = session.beginTransaction();
 		
-		session.save(emp);//insert
+		Employee e1 = session.get(Employee.class, id);
 		
 		tx.commit();
-		
+	
 		closeSession();
 		
-		System.out.println("Employee added to DB");
+		return e1;
 	}
 }
+
+
+
+

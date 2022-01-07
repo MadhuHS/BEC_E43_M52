@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity(name = "Emp")
 public class Employee {
@@ -25,8 +26,8 @@ public class Employee {
 	@Column(nullable = false)
 	private double sal;
 	
-	@Column(nullable = false)
-	private int deptNo;
+	@OneToOne
+	private Department dept;
 	
 	
 	public Employee()
@@ -34,14 +35,14 @@ public class Employee {
 		
 	}
 
-	public Employee(int empno, String eName, String job, long mob, double sal, int deptNo) {
+	public Employee(int empno, String eName, String job, long mob, double sal,Department  dept) {
 		super();
 		this.empno = empno;
 		this.eName = eName;
 		this.job = job;
 		this.mob = mob;
 		this.sal = sal;
-		this.deptNo = deptNo;
+		this.dept = dept;
 	}
 
 	public int getEmpno() {
@@ -84,12 +85,12 @@ public class Employee {
 		this.sal = sal;
 	}
 
-	public int getDeptNo() {
-		return deptNo;
+	public Department getDept() {
+		return dept;
 	}
 
-	public void setDeptNo(int deptNo) {
-		this.deptNo = deptNo;
+	public void setDept(Department dept) {
+		this.dept = dept;
 	}
 }
 
