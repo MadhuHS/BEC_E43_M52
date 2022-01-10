@@ -64,8 +64,6 @@ public class Department
 
 	public void setProjectList(List<Project> projectList) {
 		this.projectList = projectList;
-	}
-	
-	
+	}	
 
 }

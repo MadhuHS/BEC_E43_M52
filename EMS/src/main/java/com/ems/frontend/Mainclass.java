@@ -7,11 +7,13 @@ import com.ems.entities.Employee;
 import com.ems.entities.Project;
 import com.ems.repositories.DepartmentRepository;
 import com.ems.repositories.EmployeeRepository;
+import com.ems.repositories.ProjectRepository;
 
 public class Mainclass 
 {
 	static EmployeeRepository er = new EmployeeRepository();
 	static DepartmentRepository dr = new DepartmentRepository();
+	static ProjectRepository pro = new ProjectRepository();
 	
 	public static void testOneToOne()
 	{
@@ -50,19 +52,19 @@ public class Mainclass
 	
 	public static void testOneToMany()
 	{
-	   Department d1 = new Department(10,"Dev","GOA");
-	   
-	   Project pr1 = new Project("PR01","MS","12-3-2020","12-3-2022","Project one");
-	   Project pr2 = new Project("PR02","Infosys","18-8-2020","18-9-2022","Project two");
-	   Project pr3 = new Project("PR03","Wipro","12-9-2020","12-6-2022","Project three");
-	   
-	   List<Project> projectList = d1.getProjectList();
-	   
-	   projectList.add(pr1);
-	   projectList.add(pr2);
-	   projectList.add(pr3);
-	   
+	   /*Department d1 = new Department(10,"DEV","GOA");
 	   dr.insert(d1);
+	   
+	   Project p1 = new Project("PR01","MS","12-3-2021","12-3-2022","Project one");
+	   pro.insert(p1);*/
+	   
+	   Department d2 = (Department)dr.selectOne(10);
+	   Project p2 = new Project("PR02","Infosys","12-3-2021","12-3-2022","Project two");
+	   
+	   List<Project> projectList = d2.getProjectList();
+	   projectList.add(p2);
+	   
+	   dr.update(d2);
 	}
 	
 	public static void main(String[] args) 
