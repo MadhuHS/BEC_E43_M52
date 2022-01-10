@@ -19,5 +19,9 @@
 			<version>6.0.0.Beta3</version>
 		</dependency>
 
+		<dependency>
+			<groupId>Mysql</groupId>
+			<artifactId>Mysql</artifactId>
+		</dependency>
 	</dependencies>
 </project>

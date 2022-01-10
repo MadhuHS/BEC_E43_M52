@@ -1,41 +1,42 @@
 package com.ems.entities;
 
+import org.hibernate.annotations.Generated;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Entity(name = "Emp")
 public class Employee {
-	
+
 	@Id // Primary key
-	@GeneratedValue(strategy = GenerationType.AUTO) //Auto increment
+	@GeneratedValue(strategy = GenerationType.AUTO) // Auto increment
 	private int empno;
-	
-	@Column(length = 50,nullable = false)
+
+	@Column(length = 50, nullable = false)
 	private String eName;
-	
-	@Column(length = 50,nullable = false)
+
+	@Column(length = 50, nullable = false)
 	private String job;
-	
-	@Column(length = 10,nullable = false,unique = true)
+
+	@Column(length = 10, nullable = false, unique = true)
 	private long mob;
-	
+
 	@Column(nullable = false)
 	private double sal;
-	
+
 	@OneToOne
 	private Department dept;
-	
-	
-	public Employee()
-	{
-		
+
+	public Employee() {
+
 	}
 
-	public Employee(int empno, String eName, String job, long mob, double sal,Department  dept) {
+	public Employee(int empno, String eName, String job, long mob, double sal, Department dept) {
 		super();
 		this.empno = empno;
 		this.eName = eName;
@@ -93,9 +94,3 @@ public class Employee {
 		this.dept = dept;
 	}
 }
-
-
-
-
-
-

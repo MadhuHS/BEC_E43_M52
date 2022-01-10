@@ -22,4 +22,19 @@ public class Project {
 
 	@Column(length = 45, nullable = false)
 	String prDescp;
+
+	public Project()
+	{
+		
+	}
+	public Project(String prID, String prName, String prDos, String prDoe, String prDescp) {
+		super();
+		this.prID = prID;
+		this.prName = prName;
+		this.prDos = prDos;
+		this.prDoe = prDoe;
+		this.prDescp = prDescp;
+	}
+	
+	
 }

@@ -1,8 +1,12 @@
 package com.ems.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity(name = "Dept")
 public class Department
@@ -15,6 +19,9 @@ public class Department
 
 	@Column(length = 30, nullable = false)
 	private String loc;
+	
+	@OneToMany
+	private List<Project> projectList = new ArrayList<Project>();
 
 	public Department() {
 
@@ -50,5 +57,15 @@ public class Department
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}
+
+	public List<Project> getProjectList() {
+		return projectList;
+	}
+
+	public void setProjectList(List<Project> projectList) {
+		this.projectList = projectList;
+	}
+	
+	
 
 }
